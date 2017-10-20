@@ -1,0 +1,16 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: gfs-mirror
+provisioner: kubernetes.io/glusterfs
+parameters:
+  resturl: "http://10.96.97.101:8080"
+  clusterid: "1530dd1c0d44182ab07390890b1950a0"
+#  restauthenabled: "true"
+#  restuser: "admin"
+#  secretNamespace: "default"
+#  secretName: "heketi-secret"
+#  gidMin: "40000"
+#  gidMax: "50000"
+  volumetype: "replicate:2"
+

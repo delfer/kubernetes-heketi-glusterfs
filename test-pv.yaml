@@ -1,0 +1,31 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: testvolumeclaim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: gfs-mirror
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+  labels:
+    name: testpod
+spec:
+  containers:
+    - name: test
+      image: busybox
+      command: ["sleep"]
+      args: ["31536000"]
+      volumeMounts:
+      - mountPath: "/volume"
+        name: vol
+  volumes:
+    - name: vol
+      persistentVolumeClaim:
+       claimName: testvolumeclaim

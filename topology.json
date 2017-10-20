@@ -1,0 +1,40 @@
+{
+    "clusters": [
+        {
+            "nodes": [
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.31.159.21"
+                            ],
+                            "storage": [
+                                "10.31.159.21"
+                            ]
+                        },
+                        "zone": 1
+                    },
+                    "devices": [
+                        "/dev/sdb1"
+                    ]
+                },
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.31.159.22"
+                            ],
+                            "storage": [
+                                "10.31.159.22"
+                            ]
+                        },
+                        "zone": 2
+                    },
+                    "devices": [
+                        "/dev/sdb1"
+                    ]
+                }
+            ]
+        }
+    ]
+}
